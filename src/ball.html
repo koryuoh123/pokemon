@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pokemon</title>
+    <style>
+           * {
+        box-sizing: border-box;
+      }
+      /* *::before,
+      after {
+        box-sizing: border-box;
+      } */
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      #buttons {
+        position: fixed;
+        right: 0;
+        top: 0;
+        margin-top: 10px;
+        margin-right: 10px;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+      }
+      #buttons > button {
+        margin-bottom: 10px;
+        padding:4px 8px;
+      }
+      #demo {
+        position: fixed;
+        height: 50vh;
+        top: 0;
+        left: 0;
+        width: 100%;
+     
+        overflow-y: auto;
+    }
+    #demo2 {
+        display: none;
+      }
+      #demo::-webkit-scrollbar {
+        display: none;
+      }
+      #html::-webkit-scrollbar {
+        display: none;
+      }
+      #html {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50vh;
+        overflow-y: auto;
+      }
+      button {
+        text-align: center;
+      }
+      .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column-reverse;
+        height: 100vh;
+        width: 100vw;
+      }
+      .outer {
+        border: 1px solid black;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 330px;
+        width: 330px;
+        z-index: 1;
+        animation: x 10s infinite;
+      }
+      @keyframes x {
+        0% {
+          transform: rotate(0deg);
+        }
+        /* 33% {
+          transform: rotate(60deg);
+        }
+        66% {
+          transform: rotate(-60deg);
+        } */
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      .outer::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+
+        border-style: solid;
+        border-width: 15px 15px 20px 15px;
+        border-color: black;
+        background: red;
+        height: 165px;
+        width: 330px;
+        border-radius: 330px 330px 0 0;
+        transform: translateY(-20px);
+
+        z-index: 2;
+      }
+      .outer::after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+
+        border: 15px solid black;
+        background: white;
+        transform: translateY(15px);
+        height: 185px;
+        width: 330px;
+        border-radius: 0 0 330px 330px;
+        z-index: 1;
+        border-top: transparent;
+      }
+
+      .inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        width: 100px;
+        border: 14px solid black;
+        background: white;
+        border-radius: 50%;
+        position: relative;
+        z-index: 5;
+      }
+
+      .button {
+        height: 72px;
+        width: 72px;
+        border: 2px solid black;
+        background: white;
+        border-radius: 50%;
+        z-index: 5;
+        box-shadow: 1.5px 1.5px 3px 1.1px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content2" style="display:none;">
+        <div id="buttons">
+          <button id="btnPause">暂停</button>
+          <button id="btnPlay">播放</button>
+          <button id="btnSlow">慢</button>
+          <button id="btnNormal">中</button>
+          <button id="btnFast">快</button>
+        </div>
+        <style id="demo2"></style>
+        <div id="demo"></div>
+        <div id="html">
+          <div class="skin">
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+    
+            <div class="nose">
+              <div class="triangle"></div>
+            </div>
+            <div class="face left">
+              <!-- <img src="./images/flash.gif" alt=""> -->
+            </div>
+            <div class="face right">
+              <!-- <img src="./images/flash.gif" alt=""> -->
+            </div>
+            <div class="mouth">
+              <div class="up">
+                <div class="lip left"></div>
+                <div class="lip right"></div>
+              </div>
+              <div class="down">
+                <div class="yuan1">
+                  <div class="yuan2"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+      
+    <div class="content" id="content">
+      <button
+        id="begin"
+        style="
+          height: 50px;
+          width: 100px;
+          font-size: 20px;
+          display: inline-block;
+          transform: translateY(100px);
+        "
+      >
+        begin
+      </button>
+      <div class="outer">
+        <div class="inner">
+          <div class="button"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const bg = document.querySelector("#begin");
+      bg.addEventListener("click", () => {
+        const ct = document.querySelector("#content");
+        ct.style = "display:none;"
+        document.querySelector('.content2').style="display:block;"
+      });
+    </script>
+    <script src="/test.js"></script>
+  </body>
+</html>
