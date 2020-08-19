@@ -13,6 +13,7 @@ const player = {
     "#btnSlow": "slow",
     "#btnNormal": "normal",
     "#btnFast": "fast",
+  
   },
   n: 1,
   init: () => {
@@ -63,6 +64,7 @@ const player = {
     player.time = 0;
     player.play();
   },
+  
 };
 
 const bg = document.querySelector("#begin");
