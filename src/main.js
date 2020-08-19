@@ -65,4 +65,12 @@ const player = {
   },
 };
 
-player.init();
+const bg = document.querySelector("#begin");
+bg.addEventListener("click", () => {
+  const ct = document.querySelector("#content");
+  ct.style = "display:none;"
+  document.querySelector('.content2').style="display:block;"
+  player.init();
+});
+
+

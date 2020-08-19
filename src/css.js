@@ -17,6 +17,17 @@ const string =
 那么我要开始了！！
 
 
+* {
+  box-sizing: border-box;
+}
+/* *::before,
+after {
+  box-sizing: border-box;
+} */
+* {
+  padding: 0;
+  margin: 0;
+}
 
 
 .skin * {
